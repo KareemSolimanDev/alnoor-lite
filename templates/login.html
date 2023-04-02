@@ -1,0 +1,53 @@
+{%extends 'layout.html'%}
+{%block content%}
+<section>
+  <div class="my-4">
+    <h3 class="text-green text-center">تسجيل الدخول</h3>
+  </div>
+  <div class="container py-5  bg-mixed text-light rounded-5">
+  <form action="" method="post">
+    <!-- Email input -->
+    <div class=" mb-4">
+      <label class="form-label text-light fw-bold" for="form2Example1">الايميل :</label>
+      <input type="email" id="form2Example1" class="form-control" name="email"/>
+    </div>
+  
+    <!-- Password input -->
+    <div class=" mb-4">
+      <label class="form-label text-light fw-bold" for="form2Example2">كلمه السر :</label>
+      <input type="password" id="form2Example2" class="form-control" name="password" />
+    </div>
+  
+    <!-- 2 column grid layout for inline styling -->
+    <div class="mb-4">
+      <div class="col d-flex justify-content-center">
+        <!-- Checkbox -->
+        <div class="form-check">
+          <input  dir='ltr' class="form-check-input" type="checkbox" name="check" id="form2Example34" checked />
+          <label class="form-check-label" for="form2Example34"> تذكرني</label>
+        </div>
+      </div>
+
+    </div>
+  
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">تسجيل الدخول</button>
+  
+    <!-- Register link -->
+    <div class="row">
+      <div class="col text-center">
+      <p> ليس لدي حساب ؟ <a href="#!" class="fw-bold">انشاء حساب</a></p>
+    </div>
+      
+    <div class="col text-center">
+      <!-- Simple link -->
+      <a href="#!">نسيت كلمه السر</a>
+    </div>
+    </div>
+    
+  </form>
+</div>
+</section>
+
+
+{%endblock content%}

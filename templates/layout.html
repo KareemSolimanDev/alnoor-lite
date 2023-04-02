@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Alnoor Website - Home</title>
+  <title>Alnoor Website - {{title}}</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -81,7 +81,15 @@
     <!-- Container wrapper -->
   </nav>
   <!-- Navbar -->
-
+  {%with messages=get_flashed_messages(with_categories=true)%}
+  {%if messages%}
+  {%for category,message in messages%}
+    <div class="alert alert-{{category}} text-center m-0">
+      {{message}}
+    </div>
+  {%endfor%}
+  {%endif%}
+  {%endwith%}
 
   {%block content%}
   {%endblock content%}

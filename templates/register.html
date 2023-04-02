@@ -1,0 +1,71 @@
+{%extends 'layout.html'%}
+{%block content%}
+<section>
+  <div class="my-4">
+    <h3 class="text-green text-center">انشاء حساب</h3>
+  </div>
+  <div class="container py-5 bg-mixed text-light rounded-5">
+  <form action="/register" method="post">
+    <!-- 2 column grid layout with text inputs for the first and last names -->
+    <div class="row mb-4">
+      <div class="col">
+        <div >
+          <label class="form-label text-light" for="form3Example1">الاسم الاول :</label>
+          <input  type="text" id="form3Example1" class="form-control" name="fname" dir="auto"  required/>
+        </div>
+      </div>
+      <div class="col">
+        <div >
+          <label class="form-label text-light" for="form3Example2">اسم العائله :</label>
+          <input type="text" id="form3Example2" class="form-control" name="lname" dir="auto" required/>
+        </div>
+      </div>
+    </div>
+      <!-- user input -->
+      <div class=" mb-4">
+        <label class="form-label text-light" for="form3Example4">اسم المستخدم :</label>
+        <input type="text" id="form3Example4" class="form-control" name="username"  dir="auto" required/>
+        <small class="text-light">الاسم التعريفي لك في الموقع</small>
+  
+      </div>
+    <!-- Email input -->
+    <div class=" mb-4">
+      <label class="form-label text-light" for="form3Example3">الايميل :</label>
+      <input type="email" id="form3Example3" class="form-control" name="email" pattern="^[a-z0-9](\.?[a-z0-9]){5,}@g(oogle)?mail\.com$" dir="auto" required/>
+      <small class="text-light">اكتب ايميل  (gmail)</small>
+
+    </div>
+
+  
+    <!-- Password input -->
+    <div class=" mb-4">
+      <label class="form-label text-light" for="form3Example5">كلمه السر :</label>
+      <input type="password" id="form3Example5" class="form-control" name="password"  dir="auto" required />
+      <small class="text-light">اكتب كلمه سر قويه</small>
+    </div>
+  
+    <!-- Checkbox -->
+    <div class="mb-4">
+      <div class="col d-flex justify-content-center">
+        <!-- Checkbox -->
+        <div class="form-check">
+          <input  dir='ltr' class="form-check-input" type="checkbox" id="form2Example34"  name="check"  checked/>
+          <label class="form-check-label" for="form2Example34">تذكرني</label>
+        </div>
+      </div>
+
+    </div>
+  
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">انشاء حساب</button>
+  
+    <!-- Login link -->
+    <div class="text-center">
+      <p>لدي حساب ؟ <a href="#!" class="fw-bold">دخول</a></p>
+    </div>
+  </form>
+</div>
+</section>
+
+
+{%endblock content%}
