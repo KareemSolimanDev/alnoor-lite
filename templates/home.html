@@ -1,0 +1,394 @@
+{%extends 'layout.html'%}
+{%block content%}
+
+<section class="py-5 bg-grey">
+    <div class="container  ">
+      <div class="row  " >
+        <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+          <h1 class="pb-3 text-green"> ادْخُلُوهَا بِسَلَامٍ آمِنينَ<sub class="fs-6"> [الحجر:46]</sub></h1>
+          <strong>اهلا بكم في  <span class="fw-bold text-green">موقع النور</span> لتحفيظ القران الكريم نسال الله ان يمن علينا وعليكم وييسر لنا و لكم</strong>
+
+          <div class="my-4">
+            <button type="button" class="btn bg-mixed text-light rounded-pill">انشاء حساب</button>
+            <button type="button" class="btn bg-mixed text-light rounded-pill me-2">تسجيل الدخول </button>
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 d-flex justify-content-center">
+          <img src="{{url_for('static',filename='images/mainimg.png')}}" class="img-fluid" alt="quran image" >
+        </div>
+      </div>
+
+    </div>
+
+
+  </section>
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center pb-5 mb-3">
+        <h2 class="text-green">من نحن</h2>
+        <h6>السلام عليكم نحن موقع النور لتحفيظ القران الكريم نسعي دائما لرضاكم نسال الله التوفيق والسداد</h6>
+      </div>
+
+      <div class="row gy-4">
+        <div class="col-lg-6">
+          <h3 class="text-green">القران الكريم</h3>
+          <img src="{{url_for('static',filename='images/openquran.jpg')}}" class="img-fluid rounded-4 mb-4" alt="">
+          <h6 style="line-height:32px">الۡقُرۡآنۡ، ويُسَمَّىٰ تكريمًا ٱلۡقُرۡآنُ ٱلۡكَرِيمُ، هو كتاب الله المعجز عند المسلمين، يُعَظِّمُونَهُ وَيُؤْمِنُونَ أَنَّهُ كلام الله، وَأَنَّهُ قد أُنزِلَ علىٰ الرسول محمد للبيان والإعجاز، وأنه محفوظ في الصدور والسطور من كل مس أو تحريف، وَبِأَنَّهُ مَنْقُولࣱ بالتواتر، وبأنه المتعبد بتلاوته، وأنه آخر الكتب السماوية بعد صحف إبراهيم والزبور والتوراة والإنجيل.</h6>
+        </div>
+        <div class="col-lg-6">
+          <div class="content ps-0 ps-lg-5">
+            <h3 class="text-green pb-3">فضل حفظ القران الكريم</h3>
+            <ul>
+              <li class="mb-3"><i class="fa-solid fa-circle-check"></i> تحصيل الحسنات، وسبب لنَيل الأجر العظيم؛ فمن قرأ حرفاً من كتاب الله كانت له به عشر حسنات، والله يضاعف لمن يشاء.</li>
+              <li class="mb-3"><i class="fa-solid fa-circle-check"></i> تنزُّل السكينة على قارئ القرآن، فتطمئنّ نفسه، وتخشع.</li>
+              <li class="mb-3"><i class="fa-solid fa-circle-check"></i> عُلوّ شأن قارئ القرآن، ونَيله المكانة العالية الرفيعة التي لا تُعطى لغيره. </li>
+            </ul>
+            <h6 style="line-height:30px">
+              يُستحَبّ للمسلم أن يُداوم على تلاوة القرآن الكريم، والإكثار منها، وهو بذلك يتّبع سُنّة جليلة من سُنَن الإسلام، وقد بيّن الله -سبحانه- ورسوله الكريم فضل تلاوة القرآن، قال -تعالى-: (إِنَّ الَّذِينَ يَتْلُونَ كِتابَ اللَّهِ وَأَقامُوا الصَّلاةَ وَأَنْفَقُوا مِمَّا رَزَقْناهُمْ سِرًّا وَعَلانِيَةً يَرْجُونَ تِجارَةً لَنْ تَبُورَ)
+            </h6>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <section class="py-5 bg-gray">
+    <div class="container text-center">
+      <p><i class=" icon-hover fa-sharp fa-solid fa-play p-3 bg-mixed mx-2 rounded-circle text-light"></i></p>
+      
+      <h3 class="text-center text-green fs-2">استمع الي القران</h3>
+
+        <h5 class="my-4 text-light"> (وَإِذَا قُرِئَ الْقُرْآنُ فَاسْتَمِعُواْ لَهُ وَأَنصِتُواْ لَعَلَّكُمْ تُرْحَمُونَ)<sub> [الأعراف: 204] </sub></h5>
+        <div>
+          <button type="button" class="btn bg-mixed text-light rounded-pill">اقرا القران</button>
+          <button type="button" class="btn bg-mixed text-light rounded-pill">استمع للقران</button>
+        </div>
+
+
+    </div>
+  </section>
+  <section class="py-5">
+    <div class="container">
+
+      <div class="row gy-4 align-items-center">
+
+        <div class="col-md-6 ">
+          <img src="{{url_for('static',filename='images/quranstand.png')}}" alt="" class="img-fluid">
+        </div>
+
+        <div class="col-md-6">
+
+          <div class="d-flex align-items-center py-3 border-bottom border-success">
+            <span class="p-3 bg-mixed mx-2 rounded-circle text-light"><small>114</small></span>
+            <h5><strong>سوره</strong> في القران الكريم</h5>
+          </div>
+
+          <div class="d-flex align-items-center py-3 border-bottom border-success">
+            <span class="p-3 bg-mixed mx-2 rounded-circle text-light">30</span>
+            <h5><strong>جزء</strong> في القران الكريم</h5>
+          </div>
+          
+          <div class="d-flex align-items-center py-3 border-bottom border-success">
+            <span class="p-3 bg-mixed mx-2 rounded-circle text-light">15</span>
+            <h5><strong>سجده</strong> في القران الكريم</h5>
+          </div>
+          
+          <div class="d-flex align-items-center py-3 border-bottom border-success">
+            <span class="p-3 bg-mixed mx-2 rounded-circle text-light">10</span>
+            <h5><strong>قراءات</strong> للقران الكريم</h5>
+          </div>
+          
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+  <section class="py-5 bg-grey">
+    <div class="container" >
+
+      <div class="text-center pb-5 mb-3">
+        <h2 class="text-green">ماذا نقدم</h2>
+        <h6>يبذل فريق موقع النور جهده لتقديم الافضل من حيث القران وعلومه من تجويد وتفسير ونسال الله ان نكون دائما معا في تقدم</h6>
+      </div>
+
+      <div class="row gy-5 text-center" >
+
+        <div class="col-lg-4 col-md-6 bordered">
+          <div class="">
+            <div >
+              <i class="fa-solid fa-book p-3 bg-mixed mx-2 rounded-circle text-light icon-hover fs-4"></i>
+            </div>
+            <h3 class="text-green">القراءة الصحيحه </h3>
+            <p>حيث لابد من قراة القران بطريقه صحيحه ليسهل فهم المقصود من الايه ولن يتم ذلك الا بفهم احكام التجويد من اظهار واقلاب وادغام وغنه</p>
+            <a href="#" class="text-green"> اقرا المزيد <i class="fa-solid fa-arrow-left"></i></a>
+          </div>
+        </div><!-- End Service Item -->
+        
+        <div class="col-lg-4 col-md-6 ">
+          <div class="">
+            <div >
+              <i class="fa-solid fa-circle-check p-3 bg-mixed mx-2 rounded-circle text-light icon-hover fs-4"></i>
+            </div>
+            <h3 class="text-green">الطريقه الصحيحه </h3>
+            <p>حيث يختلف كل متعلم عن الاخر من حيث الطريقه التي يجيد بها التعلم والحفظ ولا سيما ان القران سريع التفلت لذا قامنا بحل المشكله واتبعنا افضل الطرق</p>
+            <a href="#" class="text-green"> اقرا المزيد <i class="fa-solid fa-arrow-left"></i></a>
+          </div>
+        </div><!-- End Service Item -->
+        
+        <div class="col-lg-4 col-md-6 bordered">
+          <div class="">
+            <div >
+              <i class="fa-solid fa-arrow-rotate-right p-3 bg-mixed mx-2 rounded-circle text-light icon-hover fs-4"></i>
+              
+            </div>
+            <h3 class="text-green"> المراجعه</h3>
+            <p>حيث ان القران اشد تفلتا من الابل في عقلها نحن اشد حرصا علي حفظه لذا يمكنك مراجعه ما حفظت لكي لا تنسي</p>
+            <a href="#" class="text-green"> اقرا المزيد <i class="fa-solid fa-arrow-left "></i></a>
+          </div>
+        </div><!-- End Service Item -->
+        
+        <div class="col-lg-4 col-md-6 bordered">
+          <div class="">
+            <div >
+              <i class="fa-solid fa-circle-plus p-3 bg-mixed mx-2 rounded-circle text-light icon-hover fs-4"></i>
+            </div>
+            <h3 class="text-green"> المزيد قريبا </h3>
+            <p>حيث نفكر في اتاحه برنامج تفسير والعديد من الخدمات القرانيه وبارك الله لنا ولكم</p>
+            <a href="#" class="text-green"> اقرا المزيد <i class="fa-solid fa-arrow-left"></i></a>
+          </div>
+        </div><!-- End Service Item -->
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="py-5 bg-grey">
+    <div class="container" >
+
+      <div class="text-center pb-1">
+        <h2 class="text-green">الحدث</h2>
+        <h6>تخطط منصه النور لاتاحه برامج متعلقه بالقران وعلومه من تفسير وتجويد وبعض الكتب الدينيه</h6>
+      </div>
+
+      <div >
+        <img src="{{url_for('static',filename='images/coming-soon.png')}}" alt="soon image" class="img-fluid">
+      </div>
+
+    </div>
+  </section>
+  <section class="py-5">
+    <div class="container" >
+
+      <div class="row gy-4">
+
+        <div class="col-lg-4">
+          <div class="text-center px-xl-5">
+            <h3 class="text-green">بعض مما يدور في عقلك</h3>
+            <p>
+              نجييب عن بعض الاسئله التي تدور في عقلك بخصوص لماذا احفظ القران وكيف وكم ساستغرق
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-8">
+
+          <div class="accordion accordion-success" id="faqlist" >
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#faq-content-1">
+                  <span class=" "><i class="fas fa-question-circle fa-sm me-2 opacity-70"></i> 1.</span>
+                  <span class="">
+                  لماذا احتاج الي حفظ القران ؟
+                </span></button>
+              </h3>
+              <div id="faq-content-1" class="accordion-collapse collapse" data-mdb-parent="#faqlist">
+                <div class="accordion-body">
+                 
+إن حفظَ القرآنِ الكريمِ من أجلِ القرباتِ، وأفضل الطاعات، وقد حثَ النبيُ صل الله عليه وسلم  أمته على حفظِ القرآنِ الكريمِ ومدارستِه وتدبره وتعلمِّه وتعليمِه، وبيّنَ فضلَ أهلِه وحملتِه، وها هي بعضُ فوائدِ الحفظِ وفضائلِه ليكونَ ذلك باعثًا للهممِ، فمنْ عرفَ الأجرَ هانتْ عليه المصاعبُ والمشاقُ .
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#faq-content-2">
+                  <span class=" "><i class="fas fa-question-circle fa-sm me-2 opacity-70"></i> 2.</span>
+                  <span class="">
+                      لماذا احتاج لمعلم ؟
+                  </span>
+              </button>
+              </h3>
+              <div id="faq-content-2" class="accordion-collapse collapse" data-mdb-parent="#faqlist">
+                <div class="accordion-body">
+                  يقوم المعلم بالأدوار الأساسية التالية : 1/ إعطاء الطلاب دروس متقدمة في التجويد وأحكام القرآن الكريم. 2/ متابعة حفظ ومراجعة الطلاب المنتظمين في الحلقة. 3/ تطوير أداء الطلاب الحفظة من خلال ( دقة أحكام التجويد – حسن الصوت – المظهر كقدوة حسنة – النواحي السلوكية والتربوية)
+                </div>
+              </div>
+            </div>
+
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#faq-content-3">
+                  <span class=""><i class="fas fa-question-circle fa-sm me-2 opacity-70"></i> 3.</span>
+                  <span class="">
+                  كيف اتعلم القران ؟
+                </span>
+              </button>
+              </h3>
+              <div id="faq-content-3" class="accordion-collapse collapse" data-mdb-parent="#faqlist">
+                <div class="accordion-body">
+                  ان الطريق إلى قراءة القرآن قراءة صحيحة هي أخذه عن المتقنين، وما أكثرهم في هذا الزمان، والحمد لله رب العالمين، وبإمكانك الاعتماد علينا وعلي الله أن تلتحقي بأقرب مركز لتحفيظ القرآن في مدينتك، وهناك تتعلمين أحكام التلاوة، وتشرعين في حفظ كتاب الله تعالى وفقًا لمقررات هذه المراكز
+                  وبإمكانك الاعتماد علينا وعلي الله
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <section  class="py-5 bg-grey">
+    <div class="container" >
+
+      <div class="text-center mb-5">
+        <h2 class="text-green">بعض المقالات</h2>
+        <h6>نقدم لكم اخر المواضيع من مدونتنا </h6>
+      </div>
+
+
+
+
+        <div class="row">
+          <div class="col-sm-6 mb-3 mb-sm-0">
+
+            <div class="card mb-3">
+              <a href="#!" class="ripple"><img src="{{url_for('static',filename='images/imgarticle.jpg')}}" class="card-img-top" alt="aticle img"></a>
+              
+              <div class="card-body">
+                <h5 class="card-title text-green">الموضوع الشيق </h5>
+                <p class="card-text">هذا عباره عن الوصف الخاص بالمقال سيكون موجودا هنا</p>
+                <div class="d-flex align-items-center">
+                  <i class="fa-solid fa-user-tie bg-mixed p-2 rounded-circle"></i>
+                  <div class="me-1 ">
+                    <h6>كريم السيد </h6>
+                  </div>
+                </div>
+                <p class="card-text mt-2"><small class="text-muted">2-3-2023</small></p>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-sm-6 mb-3 mb-sm-0">
+
+            <div class="card mb-3">
+              <a href="#!" class="ripple"><img src="{{url_for('static',filename='images/imgarticle.jpg')}}" class="card-img-top" alt="aticle img"></a>
+              
+              <div class="card-body">
+                <h5 class="card-title text-green">الموضوع الشيق </h5>
+                <p class="card-text">هذا عباره عن الوصف الخاص بالمقال سيكون موجودا هنا</p>
+                <div class="d-flex align-items-center">
+                  <i class="fa-solid fa-user-tie bg-mixed p-2 rounded-circle"></i>
+
+                  <div class="me-1 ">
+                    <h6>كريم السيد </h6>
+                  </div>
+                </div>
+                <p class="card-text mt-2"><small class="text-muted">2-3-2023</small></p>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-sm-6 mb-3 mb-sm-0">
+
+            <div class="card mb-3">
+              <a href="#!" class="ripple"><img src="{{url_for('static',filename='images/imgarticle.jpg')}}" class="card-img-top" alt="aticle img"></a>
+              
+              <div class="card-body">
+                <h5 class="card-title text-green">الموضوع الشيق </h5>
+                <p class="card-text">هذا عباره عن الوصف الخاص بالمقال سيكون موجودا هنا</p>
+                <div class="d-flex align-items-center">
+                  <i class="fa-solid fa-user-tie bg-mixed p-2 rounded-circle"></i>
+
+                  <div class="me-1">
+                    <h6>كريم السيد </h6>
+                  </div>
+                </div>
+                <p class="card-text mt-2"><small class="text-muted">2-3-2023</small></p>
+              </div>
+            </div>
+
+          </div>
+
+      </div>
+
+    </div>
+  </section>
+  <section  class="py-5">
+    <div class="container" >
+
+      <div class="text-center">
+        <h2 class="text-green">تواصل معنا</h2>
+        <h6>يمكنك التواصل معنا وتقديم اقتراحات نتقبل رايك</h6>
+      </div>
+
+      <div class="row gx-lg-0 mt-4">
+
+        <div class="col-lg-5 bg-gray p-3 order-lg-1 order-2">
+
+          <div class=" d-flex flex-column ">
+
+              <div class="bg-mixed rounded-3 p-2">
+                <div class="d-flex align-items-center">
+                  <i class="fa-solid fa-location-dot p-2 fs-5 bg-light  rounded-circle text-green ms-1"></i>
+                  <h5 class="text-light">الموقع:</h5>
+                </div>
+                <div class="text-center text-light">
+                  <h6> قلين البلد</h6>
+                </div>
+              </div>
+              <div class="bg-mixed rounded-3 p-2 mt-2">
+                <div class="d-flex align-items-center">
+                  <i class="fa-solid fa-envelope p-2 fs-5 bg-light  rounded-circle text-green ms-1"></i>
+                  <h5 class="text-light">الايميل:</h5>
+                </div>
+                <div class="text-center text-light">
+                  <h6>info@example.com</h6>
+                </div>
+              </div>
+              <div class="bg-mixed rounded-3 p-2 mt-2">
+                <div class="d-flex align-items-center">
+                  <i class="fa-solid fa-phone p-2 fs-5 bg-light  rounded-circle text-green ms-1"></i>
+                  <h5 class="text-light">الهاتف:</h5>
+                </div>
+                <div class="text-center text-light">
+                  <h6>+1 5589 55488 55</h6>
+                </div>
+              </div>
+              <div class="bg-mixed rounded-3 p-2 mt-2">
+                <div class="d-flex align-items-center">
+                  <i class="fa-solid fa-clock p-2 fs-5 bg-light  rounded-circle text-green ms-1"></i>
+                  <h5 class="text-light">وقت العمل:</h5>
+                </div>
+                <div class="text-center text-light">
+                  <h6>السبت-الخميس(9pm-9am)</h6>
+                </div>
+              </div>
+          </div>
+
+        </div>
+
+        <div class="col-lg-7 px-3 order-lg-2 order-1 mb-3" style="min-height:300px">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1709.1636873706755!2d30.85628135192202!3d31.044984665959007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f64db767c1a43d%3A0x11171de20eb33f0d!2z2YXYs9is2K8g2LnZitiz2Ykg2KPYutin!5e0!3m2!1sen!2seg!4v1680264681046!5m2!1sen!2seg" width="100%"  height="100%"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="bordered"></iframe>
+        </div><!-- End Contact Form -->
+
+      </div>
+
+    </div>
+  </section>
+{%endblock content%}

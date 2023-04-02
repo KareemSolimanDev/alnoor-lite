@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Alnoor Website - Home</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{url_for('static',filename='images/mainimg.png')}}" rel="icon">
+  <!-- Vendor CSS Files -->
+  <!-- Font Awesome -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    rel="stylesheet"
+    />
+
+    <!-- MDB -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
+    rel="stylesheet"
+    />
+  <!-- Template Main CSS File -->
+  <link href="{{url_for('static',filename='main.css')}}" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <!-- Container wrapper -->
+    <div class="container">
+      <!-- Navbar brand -->
+      <a href="" class="navbar-brand fw-bold text-green">
+        <span><i class="fa-solid fa-mosque"></i></span><span> &nbsp;النور</span> 
+      </a>
+      <!-- Toggle button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarButtonsExample"
+        aria-controls="navbarButtonsExample"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+  
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarButtonsExample">
+        <!-- Left links -->
+        <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+          <li class="nav-item ">
+            <a class="nav-link active" href="#">الرئيسيه</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#">من نحن</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#">تواصل معنا</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#">المدونه</a>
+          </li>
+        </ul>
+        <!-- Left links -->
+  
+        <div>
+
+          <button type="button" class="btn bg-mixed text-light rounded-pill">انشاء حساب</button>
+
+        </div>
+      </div>
+      <!-- Collapsible wrapper -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+
+
+  {%block content%}
+  {%endblock content%}
+
+
+
+
+
+
+  
+  <section class="pt-5">
+    <img src="{{url_for('static',filename='images/footerimg.png')}}" class="img-fluid" alt="">
+    <footer class="py-5 bg-gray text-light ">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-5 col-md-12 ">
+            <a href="index.html" class="d-flex align-items-center pb-3">
+              <span class="fw-bold text-green fs-5">النور .</span>
+            </a>
+            <p >اهلا بكم في موقع النور لتحفيظ القران الكريم نسال الله ان يمن علينا وعليكم وييسر لنا و لكم </p>
+            <div class="social-links d-flex mt-4">
+              <a href="#"></a>
+            </div>
+          </div>
+  
+          <div class="col-lg-2 col-6">
+            <h4 class="text-green">روابط</h4>
+            <ul>
+              <li><a href="#" class="text-green text-decoration-underline">الرئيسيه</a></li>
+              <li><a href="#" class="text-green text-decoration-underline">اقرا</a></li>
+              <li><a href="#" class="text-green text-decoration-underline">اسمع</a></li>
+              <li><a href="#" class="text-green text-decoration-underline">المدونه</a></li>
+              <li><a href="#" class="text-green text-decoration-underline">الشروط</a></li>
+            </ul>
+          </div>
+  
+          <div class="col-lg-2 col-6 ">
+            <h4 class="text-green">خدماتنا</h4>
+            <ul>
+              <li>تحفيظ القران</li>
+              <li>تجويد القران</li>
+              <li>تفسير القران</li>
+              <li>تفسير القران</li>
+  
+            </ul>
+          </div>
+  
+          <div class="col-lg-3 col-md-12 ">
+            <h4 class="text-green">تواصل معنا</h4>
+            <p>
+              شارع محمد علي <br>
+              قلين 535022<br>
+              كفر الشيخ <br><br>
+              <strong>الهاتف:</strong> +1 5589 55488 55<br>
+              <strong>الايميل:</strong> info@example.com<br>
+            </p>
+  
+          </div>
+  
+        </div>
+      </div>
+  
+      <div class="container mt-4 text-center">
+        <div class="copyright">
+          .كل الحقوق محفوظه <strong><span class="fw-bold text-green">النور</span></strong>  Copyright &copy; 
+        </div>
+  
+      </div>
+  
+    </footer>
+  
+    <div id="preloader"></div>
+  </section>
+
+  <!-- Vendor JS Files -->
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"
+></script>
+
+
+  <!-- Template Main JS File -->
+
+
+</body>
+
+</html>
