@@ -56,3 +56,8 @@ def logout():
     logout_user()
     return redirect(url_for('home'))
 
+
+@app.route('/create')
+def create():
+    return render_template('create.html',title='Create')
+

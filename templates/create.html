@@ -1,0 +1,45 @@
+{%extends 'layout.html'%}
+{%block content%}
+<section>
+    <div class="container ">
+      <form action="" class="py-5">
+<div>
+<label for="imgFile" class="form-label">اضف صوره : </label>
+  <input
+    type="file"
+    name="imgFile"
+    id="imgFile"
+    class="form-control"
+    accept=".png,.jpg"
+  />
+</div>
+
+        <div class="my-3">
+          <label class="form-label"  for="form12">العنوان : </label>
+          <input type="text" id="form12" class="form-control" />
+        </div>
+        <div class="my-3">
+          <label class="form-label" for="textArea">المحتوي : </label>
+          <!-- <textarea class="form-control" id="textArea" rows="4"></textarea> -->
+          <div id="editor"></div>
+
+        </div>
+        <div class="my-3 text-center">
+          <button class="btn bg-mixed text-light w-50">
+            send
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <script src="https://cdn.ckeditor.com/ckeditor5/37.0.1/classic/ckeditor.js"></script>
+  <script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+        
+</script>
+
+{%endblock content%}
