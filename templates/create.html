@@ -2,7 +2,7 @@
 {%block content%}
 <section>
     <div class="container ">
-      <form action="" class="py-5">
+      <form action="/create" class="py-5" method="post" enctype="multipart/form-data">
 <div>
 <label for="imgFile" class="form-label">اضف صوره : </label>
   <input
@@ -16,11 +16,11 @@
 
         <div class="my-3">
           <label class="form-label"  for="form12">العنوان : </label>
-          <input type="text" id="form12" class="form-control" />
+          <input type="text" id="form12" class="form-control" name="title"/>
         </div>
         <div class="my-3">
           <label class="form-label" for="textArea">المحتوي : </label>
-          <textarea class="form-control" id="textArea" rows="4"></textarea>
+          {{ ckeditor.create() }}
         </div>
         <div class="my-3 text-center">
           <button class="btn bg-mixed text-light w-50">

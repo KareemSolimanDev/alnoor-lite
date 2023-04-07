@@ -71,8 +71,11 @@
         <!-- Left links -->
   
         <div>
-
+          {%if current_user.is_authenticated%}
+          <i class="fa-solid fa-user-tie bg-mixed p-2 rounded-circle"></i>
+          {%else%}
           <button type="button" class="btn bg-mixed text-light rounded-pill">انشاء حساب</button>
+          {%endif%}
 
         </div>
       </div>
@@ -174,7 +177,7 @@
 
   <!-- Template Main JS File -->
 
-
+  {{ ckeditor.load() }}
 </body>
 
 </html>

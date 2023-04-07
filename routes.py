@@ -1,8 +1,9 @@
 from run import app
 from flask import render_template,request,flash,redirect,url_for
 from run import db
-from models import User
-from flask_login import login_user,logout_user
+from models import User,Lesson
+from flask_login import login_user,logout_user,login_required,current_user
+from helpers import save_picture
 
 @app.route('/')
 @app.route('/home')
@@ -57,7 +58,22 @@ def logout():
     return redirect(url_for('home'))
 
 
-@app.route('/create')
+@app.route('/create',methods=['GET','POST'])
+@login_required
 def create():
+    if request.method=='POST':
+        imgFile=request.files['imgFile']
+        title=request.form.get('title')
+        content=request.form.get('ckeditor')
+        image=save_picture(imgFile)
+        lesson=Lesson(image=image,title=title,content=content,author=current_user)
+        db.session.add(lesson)
+        try:
+            db.session.commit()
+        except:
+            flash('يرجي التاكد من صحه البيانات وان العنوان مستحدم للمره الاولي',category='danger')
+            return redirect(url_for('create'))
+        flash('تم اضافه الدرس بنجاح',category='success')
+        return redirect(url_for('home'))
     return render_template('create.html',title='Create')
 
