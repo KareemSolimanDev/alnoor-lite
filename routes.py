@@ -77,3 +77,7 @@ def create():
         return redirect(url_for('home'))
     return render_template('create.html',title='Create')
 
+@app.route('/lesson/<int:id>')
+def lesson(id):
+    lesson=Lesson.query.get_or_404(id)
+    return render_template('lesson_data.html',lesson=lesson,title='Lesson')

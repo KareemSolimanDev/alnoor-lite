@@ -1,0 +1,9 @@
+{%extends 'layout.html'%}
+{%block content%}
+<section>
+    <div class="container">
+        <h1 class="text-center">{{lesson.title}}</h1>
+        {{lesson.content|safe}}
+    </div>
+</section>
+{%endblock content%}
