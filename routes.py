@@ -75,7 +75,10 @@ def create():
             return redirect(url_for('create'))
         flash('تم اضافه الدرس بنجاح',category='success')
         return redirect(url_for('home'))
-    return render_template('create.html',title='Create')
+    if current_user.role=='admin':
+        return render_template('create.html',title='Create')
+    else:
+        return '404'
 
 @app.route('/lesson/<int:id>')
 def lesson(id):
