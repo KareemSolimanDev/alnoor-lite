@@ -8,7 +8,8 @@ from helpers import save_picture
 @app.route('/')
 @app.route('/home')
 def home():
-    return render_template('home.html',title='Home')
+    lessons=Lesson.query.all()[:3]
+    return render_template('home.html',title='Home',lessons=lessons)
 
 @app.route('/register',methods=['GET','POST'])
 def register():
@@ -65,8 +66,11 @@ def create():
         imgFile=request.files['imgFile']
         title=request.form.get('title')
         content=request.form.get('ckeditor')
-        image=save_picture(imgFile)
-        lesson=Lesson(image=image,title=title,content=content,author=current_user)
+        if imgFile:
+            image=save_picture(imgFile)
+            lesson=Lesson(image=image,title=title,content=content,author=current_user)
+        else:
+            lesson=Lesson(title=title,content=content,author=current_user)
         db.session.add(lesson)
         try:
             db.session.commit()

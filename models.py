@@ -17,7 +17,7 @@ class User(db.Model,UserMixin):
 
 class Lesson(db.Model):
     id=db.Column(db.Integer,primary_key=True)
-    image=db.Column(db.String,nullable=False)
+    image=db.Column(db.String,nullable=False,default='default.jpg')
     title=db.Column(db.String,nullable=False,unique=True)
     content=db.Column(db.Text,nullable=False)
     date_posted=db.Column(db.DateTime,nullable=False,default=datetime.utcnow)

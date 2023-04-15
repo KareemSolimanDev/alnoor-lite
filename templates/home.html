@@ -265,68 +265,36 @@
 
 
         <div class="row">
+          {%for lesson in lessons%}
           <div class="col-sm-6 mb-3 mb-sm-0">
 
             <div class="card mb-3">
-              <a href="#!" class="ripple"><img src="{{url_for('static',filename='images/imgarticle.jpg')}}" class="card-img-top" alt="aticle img"></a>
+              <a href="#!" class="ripple"><img src="{{url_for('static',filename='lesson-images/'+lesson.image)}}" class="card-img-top" alt="aticle img"></a>
               
-              <div class="card-body">
-                <h5 class="card-title text-green">الموضوع الشيق </h5>
-                <p class="card-text">هذا عباره عن الوصف الخاص بالمقال سيكون موجودا هنا</p>
-                <div class="d-flex align-items-center">
+              <div class="card-body pb-0">
+                <h5 class="card-title text-green">{{lesson.title}}</h5>
+                <div class="d-flex align-items-center py-2">
                   <i class="fa-solid fa-user-tie bg-mixed p-2 rounded-circle"></i>
                   <div class="me-1 ">
-                    <h6>كريم السيد </h6>
+                    <h6>{{lesson.author.fname}}</h6>
                   </div>
                 </div>
-                <p class="card-text mt-2"><small class="text-muted">2-3-2023</small></p>
+                <p class="card-footer m-0 p-0 text-muted py-3">{{lesson.date_posted.strftime('%Y-%m-%d')}}</p>
               </div>
             </div>
 
           </div>
-          <div class="col-sm-6 mb-3 mb-sm-0">
+          {%endfor%}
 
-            <div class="card mb-3">
-              <a href="#!" class="ripple"><img src="{{url_for('static',filename='images/imgarticle.jpg')}}" class="card-img-top" alt="aticle img"></a>
-              
-              <div class="card-body">
-                <h5 class="card-title text-green">الموضوع الشيق </h5>
-                <p class="card-text">هذا عباره عن الوصف الخاص بالمقال سيكون موجودا هنا</p>
-                <div class="d-flex align-items-center">
-                  <i class="fa-solid fa-user-tie bg-mixed p-2 rounded-circle"></i>
 
-                  <div class="me-1 ">
-                    <h6>كريم السيد </h6>
-                  </div>
-                </div>
-                <p class="card-text mt-2"><small class="text-muted">2-3-2023</small></p>
-              </div>
-            </div>
-
-          </div>
-          <div class="col-sm-6 mb-3 mb-sm-0">
-
-            <div class="card mb-3">
-              <a href="#!" class="ripple"><img src="{{url_for('static',filename='images/imgarticle.jpg')}}" class="card-img-top" alt="aticle img"></a>
-              
-              <div class="card-body">
-                <h5 class="card-title text-green">الموضوع الشيق </h5>
-                <p class="card-text">هذا عباره عن الوصف الخاص بالمقال سيكون موجودا هنا</p>
-                <div class="d-flex align-items-center">
-                  <i class="fa-solid fa-user-tie bg-mixed p-2 rounded-circle"></i>
-
-                  <div class="me-1">
-                    <h6>كريم السيد </h6>
-                  </div>
-                </div>
-                <p class="card-text mt-2"><small class="text-muted">2-3-2023</small></p>
-              </div>
-            </div>
-
-          </div>
 
       </div>
-
+      <div class="text-center pt-3">
+        <button class="btn bg-mixed text-light w-25">
+        المدونه
+      </button>
+      </div>
+      
     </div>
   </section>
   <section  class="py-5">
