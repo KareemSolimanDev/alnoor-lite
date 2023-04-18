@@ -8,7 +8,7 @@ from helpers import save_picture
 @app.route('/')
 @app.route('/home')
 def home():
-    lessons=Lesson.query.all()[:3]
+    lessons=Lesson.query.all()[::-1][:3]
     return render_template('home.html',title='Home',lessons=lessons)
 
 @app.route('/register',methods=['GET','POST'])
@@ -88,3 +88,17 @@ def create():
 def lesson(id):
     lesson=Lesson.query.get_or_404(id)
     return render_template('lesson_data.html',lesson=lesson,title='Lesson')
+
+
+@app.route('/lessons')
+def lessons():
+    page=request.args.get('page',1,type=int)
+    lessons=Lesson.query.paginate(page=page,per_page=1)
+    return render_template('all_lessons.html',lessons=lessons,title='Lesson')
+
+
+@app.route('/blog')
+def blog():
+    lessons_1=Lesson.query.all()[::-1][:4]
+    lessons_2=Lesson.query.all()[::-1][4:8]
+    return render_template('blog.html',lessons_1=lessons_1,lessons_2=lessons_2,title='Blog')

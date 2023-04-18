@@ -1,0 +1,55 @@
+{%extends 'layout.html'%}
+{%block content%}
+    
+
+  <section>
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        {%for lesson in lessons%}
+        <div class="col-sm-6 mb-3 mb-sm-0">
+          <div class="card mb-3">
+            <a href="#!" class="ripple"><img src="{{url_for('static',filename='lesson-images/'+lesson.image)}}" class="card-img-top" alt="aticle img"></a>
+            
+            <div class="card-body pb-0">
+              <h5 class="card-title text-green">{{lesson.title}}</h5>
+              <div class="d-flex align-items-center py-2">
+                <i class="fa-solid fa-user-tie bg-mixed p-2 rounded-circle"></i>
+                <div class="me-1 ">
+                  <h6>{{lesson.author.fname}}</h6>
+                </div>
+              </div>
+              <p class="card-footer m-0 p-0 text-muted py-3">{{lesson.date_posted.strftime('%Y-%m-%d')}}</p>
+            </div>
+          </div>
+
+        </div>
+        {%endfor%}
+        
+      </div>
+    </div>
+  </section>
+  <section >
+  <nav aria-label="Page navigation example" class="pt-5">
+    <ul class="pagination     justify-content-center">
+        {%for page_num in lessons.iter_pages(left_edge=1,right_edge=1,left_current=1,right_current=1)%}
+        {%if page_num%}
+        {%if lessons.page==page_num%}
+      <li class="page-item active  "><a class="page-link bg-mixed text-light" href="#">{{page_num}}</a></li>
+
+        {%else%}
+      <li class="page-item"><a class="page-link" href="{{url_for('lessons',page=page_num)}}">{{page_num}}</a></li>
+
+        {%endif%}
+        {%else%}
+      <li class="page-item"><a class="page-link" href="#">...</a></li>
+        
+        {%endif%}
+        {%endfor%}
+
+
+
+    </ul>
+  </nav>
+  </section>
+
+{%endblock content%}
