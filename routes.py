@@ -102,3 +102,25 @@ def blog():
     lessons_1=Lesson.query.all()[::-1][:4]
     lessons_2=Lesson.query.all()[::-1][4:8]
     return render_template('blog.html',lessons_1=lessons_1,lessons_2=lessons_2,title='Blog')
+
+@app.route('/user/<uname>')
+def user(uname):
+    guser=User.query.filter_by(uname=uname).first()
+    if guser:
+        user=guser
+    else:
+        return '404'
+        
+        
+    return render_template('user.html',title='User',user=user)
+
+@app.route('/user/<uname>/lessons')
+def user_lessons(uname):
+    guser=User.query.filter_by(uname=uname).first()
+    if guser:
+        user=guser
+    else:
+        return '404'
+    page=request.args.get('page',1,type=int)
+    lessons=Lesson.query.filter_by(user_id=user.id).paginate(page=page,per_page=1)
+    return render_template('user_lessons.html',title='User',user=user,page=page,lessons=lessons)

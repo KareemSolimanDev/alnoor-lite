@@ -1,0 +1,91 @@
+{%extends 'layout.html'%}
+{%block content%}
+
+<section>
+    <div class="container">
+        <div class="d-flex align-items-center justify-content-center bg-mixed py-5 px-2">
+            <div>
+                <i class="fa-solid fa-user-tie bg-light p-3 ms-3 fs-1 rounded-circle"></i>
+            </div>
+            <div>
+                <h3>{{user.fname}}</h3>
+                <p>{{user.uname}}</p>
+            </div>
+        </div>
+        {%if current_user.uname==user.uname%}
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+
+                <h6
+                  class=" collapsed text-center py-3"
+                  type="button"
+                  data-mdb-toggle="collapse"
+                  data-mdb-target="#flush-collapseOne"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseOne"
+                >
+                <i class="fa-solid fa-chevron-down"></i>
+                                  البيانات الشخصيه
+                                  <i class="fa-solid fa-chevron-down"></i>                    </h6>
+
+              <div
+                id="flush-collapseOne"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingOne"
+                data-mdb-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body pt-0">
+        <div class="row  text-green">
+            <div class="col-md-6">
+                <h5>الايميل : {{current_user.email}}</h5>
+            </div>
+            <div class="col-md-6">
+                <h4>كلمه السر : {{current_user.password}}</h4>
+
+            </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+    </div>
+    <div class="text-center bg-gray py-3">
+      <button type="button" class="btn bg-mixed text-light rounded-pill my-1">انشاء حساب</button>
+      <button type="button" class="btn bg-mixed text-light rounded-pill my-1">انشاء حساب</button>
+      <button type="button" class="btn bg-mixed text-light rounded-pill my-1">انشاء حساب</button>
+      <button type="button" class="btn bg-mixed text-light rounded-pill my-1">انشاء حساب</button>
+
+    </div>
+        {%endif%}
+
+        <div class="row my-4">
+            {%for lesson in user.lessons[:2]%}
+            <div class="col-sm-6 mb-3 mb-sm-0">
+              <div class="card mb-3">
+                <a href="#!" class="ripple"><img src="{{url_for('static',filename='lesson-images/'+lesson.image)}}" class="card-img-top" alt="aticle img"></a>
+                
+                <div class="card-body pb-0">
+                  <h5 class="card-title text-green">{{lesson.title}}</h5>
+                  <div class="d-flex align-items-center py-2">
+                    <i class="fa-solid fa-user-tie bg-mixed p-2 rounded-circle"></i>
+                    <div class="me-1 ">
+                      <h6>{{lesson.author.fname}}</h6>
+                    </div>
+                  </div>
+                  <p class="card-footer m-0 p-0 text-muted py-3">{{lesson.date_posted.strftime('%Y-%m-%d')}}</p>
+                </div>
+              </div>
+    
+            </div>
+            {%endfor%}
+        </div>
+        <div class="text-center">
+            <button type="button" class="btn bg-mixed text-light rounded-pill">انشاء حساب</button>
+
+        </div>
+    </div>
+</section>
+
+{%endblock content%}
