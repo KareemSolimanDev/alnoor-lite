@@ -1,5 +1,5 @@
 from run import app
-from flask import render_template,request,flash,redirect,url_for
+from flask import render_template,request,flash,redirect,url_for,abort
 from run import db
 from models import User,Lesson
 from flask_login import login_user,logout_user,login_required,current_user
@@ -15,6 +15,15 @@ def home():
 @app.route('/about')
 def about():
     return render_template('about.html',title='About')
+
+@app.route('/listen')
+def listen():
+    flash('يتوقف تحميل الايه علي سرعه الانترنت ','info')
+    return render_template('listen.html',title='listen')
+
+@app.route('/read')
+def read():
+    return render_template('read.html',title='Read')
 
 @app.route('/register',methods=['GET','POST'])
 def register():
@@ -86,7 +95,7 @@ def create():
         flash('تم اضافه الدرس بنجاح',category='success')
         return redirect(url_for('home'))
     if (current_user.role=='user'):
-        return '404'
+        return abort(403)
     else:
         return render_template('create.html',title='Create')
 
@@ -101,7 +110,7 @@ def lesson(id):
 @login_required
 def lessons():
     page=request.args.get('page',1,type=int)
-    lessons=Lesson.query.paginate(page=page,per_page=1)
+    lessons=Lesson.query.paginate(page=page,per_page=6)
     return render_template('all_lessons.html',lessons=lessons,title='Lesson')
 
 
@@ -119,9 +128,7 @@ def user(uname):
     if guser:
         user=guser
     else:
-        return '404'
-        
-        
+        return abort(404)
     return render_template('user.html',title='User',user=user)
 
 @app.route('/user/<uname>/lessons')
@@ -131,7 +138,15 @@ def user_lessons(uname):
     if guser:
         user=guser
     else:
-        return '404'
+        return abort(404)
     page=request.args.get('page',1,type=int)
-    lessons=Lesson.query.filter_by(user_id=user.id).paginate(page=page,per_page=1)
+    lessons=Lesson.query.filter_by(user_id=user.id).paginate(page=page,per_page=6)
     return render_template('user_lessons.html',title='User',user=user,page=page,lessons=lessons)
+
+@app.errorhandler(404)
+def not_found(e):
+    return render_template('404.html',title='Error'), 404
+
+@app.errorhandler(403)
+def not_allowed(e):
+    return render_template('304.html',title='Error'), 403

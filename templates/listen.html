@@ -1,0 +1,78 @@
+{%extends 'layout.html'%}
+{%block content%}
+
+<style>
+  .surahs > div {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    font-weight: bold;
+    width: calc(100% - 70px);
+    transition: 0.3s color ease;
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    position: relative;
+    font-size: 20px;
+    counter-increment: surah-counter;
+  }
+  .surahs > div::after {
+    content: counter(surah-counter);
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    left: -70px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    font-size: 25px;
+    line-height: 60px;
+    text-align: center;
+    background-color: inherit;
+    transition: inherit;
+    box-shadow: inherit;
+  }
+  .surahs > div::before {
+    content: "";
+    position: absolute;
+    border: 7px solid transparent;
+    border-right-color: #15c58c;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -14px;
+  }
+  .surahs > div:hover,
+  .surahs > div:hover::after {
+    background: linear-gradient(to top, #43b155, #15c58c);
+    color: #fff;
+  }
+</style>
+  <div class="container">
+    <div
+      class="player sticky-top text-center bg-mixed p-3 text-white rounded-bottom-5"
+    >
+      <h6 class="ayah py-2 fs-md-4" style="line-height: 25px;">اضغط علي السورة للاستماع اليها</h6>
+      <audio src="" class="quranPlayer w-100" controls autoplay></audio>
+      <div
+        class="buttons d-flex justify-content-around py-2 bg-white rounded-5"
+      >
+        <div class="next">
+          <i
+            class="fas fa-forward p-3 bg-mixed mx-2 rounded-circle text-white"
+          ></i>
+        </div>
+        <div class="play">
+          <i
+            class="fas fa-play p-3 bg-mixed mx-2 rounded-circle text-white"
+          ></i>
+        </div>
+        <div class="prev">
+          <i
+            class="fas fa-backward p-3 bg-mixed mx-2 rounded-circle text-white"
+          ></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="surahs pt-4"></div>
+  </div>
+<script src="{{url_for('static',filename='main.js')}}"></script>
+{%endblock content%}
