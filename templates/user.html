@@ -48,30 +48,23 @@
             </div>
 
           </div>
-
-
-    </div>
-    <div class="text-center bg-gray py-3">
-      <button type="button" class="btn bg-mixed text-light rounded-pill my-1">انشاء حساب</button>
-      <button type="button" class="btn bg-mixed text-light rounded-pill my-1">انشاء حساب</button>
-      <button type="button" class="btn bg-mixed text-light rounded-pill my-1">انشاء حساب</button>
-      <button type="button" class="btn bg-mixed text-light rounded-pill my-1">انشاء حساب</button>
-
     </div>
         {%endif%}
 
+        {%if user.role=='admin' or user.role=='lead'%}
         <div class="row my-4">
+
             {%for lesson in user.lessons[:2]%}
             <div class="col-sm-6 mb-3 mb-sm-0">
               <div class="card mb-3">
-                <a href="#!" class="ripple"><img src="{{url_for('static',filename='lesson-images/'+lesson.image)}}" class="card-img-top" alt="aticle img"></a>
+                <a href="{{url_for('lesson',id=lesson.id)}}" class="ripple"><img src="{{url_for('static',filename='lesson-images/'+lesson.image)}}" class="card-img-top" alt="aticle img"></a>
                 
                 <div class="card-body pb-0">
-                  <h5 class="card-title text-green">{{lesson.title}}</h5>
+                  <h3 class="card-title text-green"><a href="{{url_for('lesson',id=lesson.id)}}" class="text-green">{{lesson.title}}</a></h3>
                   <div class="d-flex align-items-center py-2">
                     <i class="fa-solid fa-user-tie bg-mixed p-2 rounded-circle"></i>
                     <div class="me-1 ">
-                      <h6>{{lesson.author.fname}}</h6>
+                      <h6> <a href="{{url_for('user',uname=lesson.author.uname)}}" class="text-green">{{lesson.author.fname}}</a></h6>
                     </div>
                   </div>
                   <p class="card-footer m-0 p-0 text-muted py-3">{{lesson.date_posted.strftime('%Y-%m-%d')}}</p>
@@ -82,9 +75,10 @@
             {%endfor%}
         </div>
         <div class="text-center">
-            <button type="button" class="btn bg-mixed text-light rounded-pill">انشاء حساب</button>
+            <button type="button" class="btn bg-mixed text-light rounded-pill"><a href="{{url_for('user_lessons',uname=user.uname)}}" class="text-light">كل الدروس ({{user.fname}})</a></button>
 
         </div>
+        {%endif%}
     </div>
 </section>
 
