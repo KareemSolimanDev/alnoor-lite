@@ -12,17 +12,18 @@ app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///db.db'
 
 class MyAdminIndexView(AdminIndexView):
     def is_accessible(self):
-        return (current_user.role=='admin')
+        return (current_user.role=='lead') or (current_user.id==1)
 
 class MyModelView(ModelView):
     def is_accessible(self):
-        return (current_user.role=='admin')
+        return (current_user.role=='lead') or (current_user.id==1)
 
 db=SQLAlchemy(app)
 ckeditor = CKEditor(app)
 login_manager = LoginManager(app)
 login_manager.login_view = "login"
 login_manager.login_message_category = "info"
+login_manager.login_message='يجب تسجيل الدخول للوصول لهذه الصفحه'
 admin = Admin(app, index_view=MyAdminIndexView())
 
 from routes import *

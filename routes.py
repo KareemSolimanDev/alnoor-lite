@@ -11,6 +11,11 @@ def home():
     lessons=Lesson.query.all()[::-1][:3]
     return render_template('home.html',title='Home',lessons=lessons)
 
+
+@app.route('/about')
+def about():
+    return render_template('about.html',title='About')
+
 @app.route('/register',methods=['GET','POST'])
 def register():
     if request.method=='POST':
@@ -32,6 +37,7 @@ def register():
         flash('تم انشاء الحساب بنجاح',category='success')
         return redirect(url_for('home'))
     else:
+        flash("سيتم حذف حسابك ان كانت المعلومات غير صحيحه",category='info')
         return render_template('register.html',title='Register')
 
 
@@ -79,18 +85,20 @@ def create():
             return redirect(url_for('create'))
         flash('تم اضافه الدرس بنجاح',category='success')
         return redirect(url_for('home'))
-    if current_user.role=='admin':
-        return render_template('create.html',title='Create')
-    else:
+    if (current_user.role=='user'):
         return '404'
+    else:
+        return render_template('create.html',title='Create')
 
 @app.route('/lesson/<int:id>')
+@login_required
 def lesson(id):
     lesson=Lesson.query.get_or_404(id)
     return render_template('lesson_data.html',lesson=lesson,title='Lesson')
 
 
 @app.route('/lessons')
+@login_required
 def lessons():
     page=request.args.get('page',1,type=int)
     lessons=Lesson.query.paginate(page=page,per_page=1)
@@ -98,12 +106,14 @@ def lessons():
 
 
 @app.route('/blog')
+@login_required
 def blog():
     lessons_1=Lesson.query.all()[::-1][:4]
     lessons_2=Lesson.query.all()[::-1][4:8]
     return render_template('blog.html',lessons_1=lessons_1,lessons_2=lessons_2,title='Blog')
 
 @app.route('/user/<uname>')
+@login_required
 def user(uname):
     guser=User.query.filter_by(uname=uname).first()
     if guser:
@@ -115,6 +125,7 @@ def user(uname):
     return render_template('user.html',title='User',user=user)
 
 @app.route('/user/<uname>/lessons')
+@login_required
 def user_lessons(uname):
     guser=User.query.filter_by(uname=uname).first()
     if guser:
