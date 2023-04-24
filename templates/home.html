@@ -9,8 +9,12 @@
           <strong>اهلا بكم في  <span class="fw-bold text-green">موقع النور</span> لتحفيظ القران الكريم نسال الله ان يمن علينا وعليكم وييسر لنا و لكم</strong>
 
           <div class="my-4">
-            <button type="button" class="btn bg-mixed text-light rounded-pill">انشاء حساب</button>
-            <button type="button" class="btn bg-mixed text-light rounded-pill me-2">تسجيل الدخول </button>
+            {%if current_user.is_authenticated%}
+            <button type="button" class="btn bg-mixed text-light rounded-pill"> <a href="{{url_for('listen')}}" class="text-light">استمع للقرأن<i class="fa-solid fa-left-long p-1 bg-light rounded-circle text-green me-2"></i></a></button>
+            {%else%}
+
+            <button type="button" class="btn bg-mixed text-light rounded-pill me-2"><a href="{{url_for('login')}}" class="text-light">تسجيل الدخول</a></button>
+            {%endif%}
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 d-flex justify-content-center">
@@ -60,8 +64,8 @@
 
         <h5 class="my-4 text-light"> (وَإِذَا قُرِئَ الْقُرْآنُ فَاسْتَمِعُواْ لَهُ وَأَنصِتُواْ لَعَلَّكُمْ تُرْحَمُونَ)<sub> [الأعراف: 204] </sub></h5>
         <div>
-          <button type="button" class="btn bg-mixed text-light rounded-pill">اقرا القران</button>
-          <button type="button" class="btn bg-mixed text-light rounded-pill">استمع للقران</button>
+          <button type="button" class="btn bg-mixed  rounded-pill">  <a href="{{url_for('listen')}}" class="text-light">استمع للقران</a></button>
+          <button type="button" class="btn bg-mixed  rounded-pill">  <a href="{{url_for('read')}}" class="text-light">اقرا القران</a></button>
         </div>
 
 
@@ -116,47 +120,47 @@
       <div class="row gy-5 text-center" >
 
         <div class="col-lg-4 col-md-6 bordered">
-          <div class="">
+          <div>
             <div >
               <i class="fa-solid fa-book p-3 bg-mixed mx-2 rounded-circle text-light icon-hover fs-4"></i>
             </div>
             <h3 class="text-green">القراءة الصحيحه </h3>
             <p>حيث لابد من قراة القران بطريقه صحيحه ليسهل فهم المقصود من الايه ولن يتم ذلك الا بفهم احكام التجويد من اظهار واقلاب وادغام وغنه</p>
-            <a href="#" class="text-green"> اقرا المزيد <i class="fa-solid fa-arrow-left"></i></a>
+            <a href="{{url_for('about')}}" class="text-green"> اقرا المزيد <i class="fa-solid fa-arrow-left"></i></a>
           </div>
         </div><!-- End Service Item -->
         
         <div class="col-lg-4 col-md-6 ">
-          <div class="">
+          <div>
             <div >
               <i class="fa-solid fa-circle-check p-3 bg-mixed mx-2 rounded-circle text-light icon-hover fs-4"></i>
             </div>
             <h3 class="text-green">الطريقه الصحيحه </h3>
             <p>حيث يختلف كل متعلم عن الاخر من حيث الطريقه التي يجيد بها التعلم والحفظ ولا سيما ان القران سريع التفلت لذا قامنا بحل المشكله واتبعنا افضل الطرق</p>
-            <a href="#" class="text-green"> اقرا المزيد <i class="fa-solid fa-arrow-left"></i></a>
+            <a href="{{url_for('about')}}" class="text-green"> اقرا المزيد <i class="fa-solid fa-arrow-left"></i></a>
           </div>
         </div><!-- End Service Item -->
         
         <div class="col-lg-4 col-md-6 bordered">
-          <div class="">
+          <div>
             <div >
               <i class="fa-solid fa-arrow-rotate-right p-3 bg-mixed mx-2 rounded-circle text-light icon-hover fs-4"></i>
               
             </div>
             <h3 class="text-green"> المراجعه</h3>
             <p>حيث ان القران اشد تفلتا من الابل في عقلها نحن اشد حرصا علي حفظه لذا يمكنك مراجعه ما حفظت لكي لا تنسي</p>
-            <a href="#" class="text-green"> اقرا المزيد <i class="fa-solid fa-arrow-left "></i></a>
+            <a href="{{url_for('about')}}" class="text-green"> اقرا المزيد <i class="fa-solid fa-arrow-left"></i></a>>
           </div>
         </div><!-- End Service Item -->
         
         <div class="col-lg-4 col-md-6 bordered">
-          <div class="">
+          <div>
             <div >
               <i class="fa-solid fa-circle-plus p-3 bg-mixed mx-2 rounded-circle text-light icon-hover fs-4"></i>
             </div>
             <h3 class="text-green"> المزيد قريبا </h3>
             <p>حيث نفكر في اتاحه برنامج تفسير والعديد من الخدمات القرانيه وبارك الله لنا ولكم</p>
-            <a href="#" class="text-green"> اقرا المزيد <i class="fa-solid fa-arrow-left"></i></a>
+            <a href="{{url_for('about')}}" class="text-green"> اقرا المزيد <i class="fa-solid fa-arrow-left"></i></a>>
           </div>
         </div><!-- End Service Item -->
 
@@ -201,7 +205,7 @@
               <h3 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#faq-content-1">
                   <span class=" "><i class="fas fa-question-circle fa-sm me-2 opacity-70"></i> 1.</span>
-                  <span class="">
+                  <span>
                   لماذا احتاج الي حفظ القران ؟
                 </span></button>
               </h3>
@@ -217,7 +221,7 @@
               <h3 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#faq-content-2">
                   <span class=" "><i class="fas fa-question-circle fa-sm me-2 opacity-70"></i> 2.</span>
-                  <span class="">
+                  <span>
                       لماذا احتاج لمعلم ؟
                   </span>
               </button>
@@ -233,8 +237,8 @@
             <div class="accordion-item">
               <h3 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#faq-content-3">
-                  <span class=""><i class="fas fa-question-circle fa-sm me-2 opacity-70"></i> 3.</span>
-                  <span class="">
+                  <span><i class="fas fa-question-circle fa-sm me-2 opacity-70"></i> 3.</span>
+                  <span>
                   كيف اتعلم القران ؟
                 </span>
               </button>
@@ -269,14 +273,14 @@
           <div class="col-sm-6 mb-3 mb-sm-0">
 
             <div class="card mb-3">
-              <a href="#!" class="ripple"><img src="{{url_for('static',filename='lesson-images/'+lesson.image)}}" class="card-img-top" alt="aticle img"></a>
+              <a href="{{url_for('lesson',id=lesson.id)}}" class="ripple"><img src="{{url_for('static',filename='lesson-images/'+lesson.image)}}" class="card-img-top" alt="aticle img"></a>
               
               <div class="card-body pb-0">
-                <h5 class="card-title text-green">{{lesson.title}}</h5>
+                <h3 class="card-title text-green"><a href="{{url_for('lesson',id=lesson.id)}}" class="text-green">{{lesson.title}}</a></h3>
                 <div class="d-flex align-items-center py-2">
                   <i class="fa-solid fa-user-tie bg-mixed p-2 rounded-circle"></i>
                   <div class="me-1 ">
-                    <h6>{{lesson.author.fname}}</h6>
+                    <h6> <a href="{{url_for('user',uname=lesson.author.uname)}}" class="text-green">{{lesson.author.fname}}</a></h6>
                   </div>
                 </div>
                 <p class="card-footer m-0 p-0 text-muted py-3">{{lesson.date_posted.strftime('%Y-%m-%d')}}</p>
@@ -291,7 +295,7 @@
       </div>
       <div class="text-center pt-3">
         <button class="btn bg-mixed text-light w-25">
-        المدونه
+          <a href="{{url_for('blog')}}" class="text-light">المدونه</a>
       </button>
       </div>
       
@@ -311,43 +315,43 @@
 
           <div class=" d-flex flex-column ">
 
-              <div class="bg-mixed rounded-3 p-2">
-                <div class="d-flex align-items-center">
-                  <i class="fa-solid fa-location-dot p-2 fs-5 bg-light  rounded-circle text-green ms-1"></i>
-                  <h5 class="text-light">الموقع:</h5>
-                </div>
-                <div class="text-center text-light">
-                  <h6> قلين البلد</h6>
-                </div>
+            <div class="bg-mixed rounded-3 p-2">
+              <div class="d-flex align-items-center">
+                <i class="fa-solid fa-location-dot p-2 fs-5 bg-light  rounded-circle text-green ms-1"></i>
+                <h5 class="text-light">الموقع:</h5>
               </div>
-              <div class="bg-mixed rounded-3 p-2 mt-2">
-                <div class="d-flex align-items-center">
-                  <i class="fa-solid fa-envelope p-2 fs-5 bg-light  rounded-circle text-green ms-1"></i>
-                  <h5 class="text-light">الايميل:</h5>
-                </div>
-                <div class="text-center text-light">
-                  <h6>info@example.com</h6>
-                </div>
+              <div class="text-center text-light">
+                <h6>قلين البلد شارع ابو بكر الرازي</h6>
               </div>
-              <div class="bg-mixed rounded-3 p-2 mt-2">
-                <div class="d-flex align-items-center">
-                  <i class="fa-solid fa-phone p-2 fs-5 bg-light  rounded-circle text-green ms-1"></i>
-                  <h5 class="text-light">الهاتف:</h5>
-                </div>
-                <div class="text-center text-light">
-                  <h6>+1 5589 55488 55</h6>
-                </div>
+            </div>
+            <div class="bg-mixed rounded-3 p-2 mt-2">
+              <div class="d-flex align-items-center">
+                <i class="fa-solid fa-envelope p-2 fs-5 bg-light  rounded-circle text-green ms-1"></i>
+                <h5 class="text-light">الايميل:</h5>
               </div>
-              <div class="bg-mixed rounded-3 p-2 mt-2">
-                <div class="d-flex align-items-center">
-                  <i class="fa-solid fa-clock p-2 fs-5 bg-light  rounded-circle text-green ms-1"></i>
-                  <h5 class="text-light">وقت العمل:</h5>
-                </div>
-                <div class="text-center text-light">
-                  <h6>السبت-الخميس(9pm-9am)</h6>
-                </div>
+              <div class="text-center text-light">
+                <h6>alnoorwebsite.com@gmail.com</h6>
               </div>
-          </div>
+            </div>
+            <div class="bg-mixed rounded-3 p-2 mt-2">
+              <div class="d-flex align-items-center">
+                <i class="fa-solid fa-phone p-2 fs-5 bg-light  rounded-circle text-green ms-1"></i>
+                <h5 class="text-light">الهاتف:</h5>
+              </div>
+              <div class="text-center text-light">
+                <h6 dir="ltr">01206915404</h6>
+              </div>
+            </div>
+            <div class="bg-mixed rounded-3 p-2 mt-2">
+              <div class="d-flex align-items-center">
+                <i class="fa-solid fa-clock p-2 fs-5 bg-light  rounded-circle text-green ms-1"></i>
+                <h5 class="text-light">وقت العمل:</h5>
+              </div>
+              <div class="text-center text-light">
+                <h6>برجاء التواصل لتحديد الوقت <a href='https://wa.me/01206915404' class="fa-solid fa-left-long p-1 bg-light rounded-circle text-green"></a></h6>
+              </div>
+            </div>
+        </div>
 
         </div>
 
