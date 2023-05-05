@@ -49,6 +49,20 @@
 
           </div>
     </div>
+    <div class="text-center p-3 bg-gray">
+    {%if (user.role=='admin' or (user.role=='lead'))%}
+
+      <button type="button" class="btn bg-mixed text-light rounded-pill"><a href="{{url_for('admin.index')}}" class="text-light">لوحه التحكم</a></button>
+
+    {%endif%}
+    {%if (user.role=='lead')%}
+
+      <button type="button" class="btn bg-mixed text-light rounded-pill"><a href="{{url_for('create')}}" class="text-light">انشاء درس</a></button>
+
+    {%endif%}
+    </div>
+
+
         {%endif%}
 
         {%if user.role=='admin' or user.role=='lead'%}
